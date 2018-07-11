@@ -22,7 +22,12 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
+//$split-pane-side-max-width: 12%;
+//$split-pane-ios-side-max-width: 28%;
+//$split-pane-wp-side-max-width:28%;
 
+$split-pane-md-side-max-width: 18%;
+$split-pane-md-side-min-width: 170px;
 
 
 // Named Color Variables
