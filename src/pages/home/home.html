@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -38,6 +39,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <button ion-button (click)="logout()">logout</button>
 
   <ion-fab right bottom class="web-fab">
     <button ion-fab icon-only color="primary" (click)="checkPlatform()">

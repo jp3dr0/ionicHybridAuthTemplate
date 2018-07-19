@@ -1,9 +1,12 @@
+import { LoginPage } from './../login/login';
+import { AuthProvider } from './../../providers/auth/auth';
 import { Component } from '@angular/core';
-import { NavController, Platform, AlertController } from 'ionic-angular';
+import { NavController, Platform, AlertController, IonicPage } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import "rxjs/add/operator/map";
 import { Observable } from 'rxjs/Observable';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -12,9 +15,19 @@ export class HomePage {
 
   users: Observable<any>;
 
-  constructor(public navCtrl: NavController, private httpClient: HttpClient, private plt: Platform, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private httpClient: HttpClient, private plt: Platform, private alertCtrl: AlertController, private authService: AuthProvider) {
     this.users = this.httpClient.get('https://randomuser.me/api/?results=20')
       .map(res => res['results'])
+  }
+
+  ionViewDidLoad(){
+    console.log("loaded home");  
+  }
+
+  ionViewCanEnter(){
+    //const canEnter = this.authService.getAuthState();
+    //console.log(canEnter);
+    return this.authService.authenticated;
   }
 
   checkPlatform() {
@@ -32,4 +45,8 @@ export class HomePage {
     }
   }
 
+  logout() {
+    this.authService.signOut();
+    this.navCtrl.setRoot(LoginPage);
+  }
 }

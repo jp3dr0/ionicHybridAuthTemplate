@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Platform, AlertController } from '../../../node_modules/ionic-angular/umd';
+import { Platform, AlertController } from '../../../node_modules/ionic-angular';
 
 /*
   Generated class for the PlatformProvider provider.

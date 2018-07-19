@@ -1,5 +1,5 @@
-page-login {
-  // Fullscreen centered image background
+page-register {
+    // Fullscreen centered image background
   ion-content {
     background-size: cover;
     background-position: center;
@@ -51,20 +51,5 @@ page-login {
     width: 100%; // border-radius: 30px;
     font-size: 0.9em; // border: 1px solid #fff;
     background-color: #39acdc;
-  }
-  .auth-button {
-    width: 80%; // border-radius: 30px;
-    //font-size: 0.9em; // border: 1px solid #fff;
-    //background-color: #39acdc;
-  }
-  .auth-google {
-    background-color: #DC4E41;
-  }
-  .auth-facebook {
-    background-color: #3B5998;
-  }
-  .adjust-top {
-    position: relative !important;
-    top: -1px !important;
   }
 }

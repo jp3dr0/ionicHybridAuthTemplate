@@ -1,18 +1,53 @@
-<!--
-  Generated template for the LoginPage page.
+<ion-content padding class="transparent-header" [ngStyle]="backgroundImage">
+  <ion-header>
+    <ion-navbar>
+    </ion-navbar>
+  </ion-header>
+  <div padding>
+    <ion-row>
+      <ion-col>
+        <img class="logo" src="assets/img/logo/logo-mailchimp.png" />
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+      <ion-row>
+        <ion-col>
+          <ion-list inset class="no-border">
+            <ion-item>
+              <!--
+              <ion-input type="text"></ion-input>
+              -->
+              <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button class="login-button" type="submit" [disabled]="signinForm.invalid">Login</button>
+        </ion-col>
+      </ion-row>
+    </form>
+    <ion-row>
+      <ion-col>
+        <div (click)="onSignup()">
+          <span>Criar nova conta</span>
+        </div>
+      </ion-col>
+    </ion-row>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start class="auth-button auth-google" (click)="googleLogin()">
+          <ion-icon name="logo-google" class="adjust-top"></ion-icon>
+          Entrar com Google
+        </button>
+        <button ion-button icon-start class="auth-button auth-facebook" (click)="rootHome()"><ion-icon name="logo-facebook" class="adjust-top"></ion-icon>Entrar com Facebok</button>
+      </ion-col>
+    </ion-row>
+  </div>
 
 </ion-content>
